@@ -17,7 +17,7 @@ defined in `docker-compose.yml`.
 # Helpful links
 
 - The unauthenticated StackExchange API limit should be sufficient but if you want to experiment more,
-  you can register your app and increase the limit from 300 to 1000 per day. Useful links:
+  you can register your app and increase the limit from 300 to 10000 per day. Useful links:
   - https://stackapps.com/questions/67/how-api-keys-work-faq
   - https://stackapps.com/questions/9181/how-can-i-get-the-access-token-to-use-the-stackoverflow-rest-api-as-an-authentic
   - https://stackapps.com/apps/oauth/register
