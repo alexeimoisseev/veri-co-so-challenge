@@ -11,6 +11,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "ts-node-dev --respawn --transpile-only --exit-child --poll src/index.ts",
+    "migrate": "ts-node-dev src/migrate",
     "prod": "npm run build && node dist/index.js"
   },
   "devDependencies": {
@@ -22,6 +23,7 @@
   },
   "dependencies": {
     "fastify": "^3.25.3",
+    "fastify-postgres": "^3.6.0",
     "got": "11.8.3",
     "postgresql-client": "^1.21.5"
   }
