@@ -76,6 +76,12 @@ export default async function routes(fastify: FastifyInstance) {
     fastify.log.info({ url });
     const response = await got.get(url).json() as SOResponse;
     const { items } = response;
+
+    // not cool. Promise.all of Promise.all
+    // If one request fails, the whole thing will fail.
+    // In real life this part should be done in some more smart way.
+    // Like putting each question to some distributed queue and then saving one by one.
+    // https://bit.ly/3qcZeDl
     await Promise.all(items.map(item => saveWords(item, fastify.pg)));
 
     return { result: 'ok' };
