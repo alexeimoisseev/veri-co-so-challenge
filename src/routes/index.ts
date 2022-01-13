@@ -36,10 +36,11 @@ async function formatStats(sql: PostgresDb, k: number = 0): Promise<StatsItem[]>
     return [];
   }
   const items = result.rows.map((item: any[]) => {
-    const total = item[1];
-    const answered = item[2];
+    const { word } = item;
+    const total = Number(item.total);
+    const answered = Number(item.answered);
     return {
-      word: item[0],
+      word,
       total,
       answered,
       ratio: Math.max(0, total - k) * (1 / Math.max(total-k, 1)) * (answered / total)
